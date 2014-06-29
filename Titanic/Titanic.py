@@ -11,7 +11,6 @@ import re
 import csv
 import pylab as pl
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import GradientBoostingClassifier
 from sklearn import cross_validation
 
 
@@ -125,7 +124,7 @@ def forest_cv():
 
 ########################  Output results  #####################################
 print 'Training...'
-clf = GradientBoostingClassifier(n_estimators=200).fit(train_x, train_y)
+clf = RandomForestClassifier(n_estimators=200).fit(train_x, train_y)
 
 print 'Predicting...'
 output = clf.predict(test_x).astype(int)
